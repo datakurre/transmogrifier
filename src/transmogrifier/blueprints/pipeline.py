@@ -35,7 +35,7 @@ class Pipeline(Blueprint):
     def __iter__(self):
         assert not self.options.get('condition'), \
             'Support for conditional pipelines has been removed'
-        
+
         sections = get_lines(self.options.get('pipeline'))
         if sections:
             previous = self.create_pipeline(sections, self.previous)
