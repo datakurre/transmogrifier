@@ -12,7 +12,7 @@ cache:
   directories:
   - eggs
 install:
-- pip install -U setuptools zc.buildout==2.5.2
+- pip install -U setuptools zc.buildout
 - buildout -N -t 3 install test code-analysis
 script:
 - bin/test
