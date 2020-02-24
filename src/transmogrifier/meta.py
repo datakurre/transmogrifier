@@ -12,6 +12,8 @@ from transmogrifier.interfaces import ISectionBlueprint
 from transmogrifier.interfaces import ISection
 from transmogrifier.registry import configuration_registry
 
+import six
+
 
 class IPipelineDirective(Interface):
     """Register pipeline configurations with the global registry.
@@ -20,8 +22,7 @@ class IPipelineDirective(Interface):
     name = DottedName(
         title='Name',
         description="If not specified 'default' is used.",
-        default=b'default',
-        # TODO: why 'default' =>  WrongType: (u'default', <type 'str'>, '')
+        default=six.PY2 and b'default' or 'default',
         required=False
     )
 
