@@ -5,7 +5,7 @@ from zope.component.zcml import IUtilityDirective
 from zope.component.zcml import utility
 from zope.configuration.fields import MessageID
 from zope.configuration.fields import Path
-from zope.configuration.fields import PythonIdentifier
+from zope.configuration.fields import DottedName
 from zope.interface import Interface
 
 from transmogrifier.interfaces import ISectionBlueprint
@@ -17,10 +17,10 @@ class IPipelineDirective(Interface):
     """Register pipeline configurations with the global registry.
     """
 
-    name = PythonIdentifier(
+    name = DottedName(
         title='Name',
         description="If not specified 'default' is used.",
-        default='default',
+        default=b'default',
         required=False
     )
 
