@@ -21,6 +21,7 @@ class IPipelineDirective(Interface):
         title='Name',
         description="If not specified 'default' is used.",
         default=b'default',
+        # TODO: why 'default' =>  WrongType: (u'default', <type 'str'>, '')
         required=False
     )
 
